@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age Calculator</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="libs/flatpickr.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="container">
-    <h1>Age Calculator</h1>
+    <h1><i class="fas fa-calculator"></i> Age Calculator</h1>
     <section class="form">
-        <label for="birthday">Enter your date of birth</label>
+        <label for="birthday"><i class="fas fa-birthday-cake"></i> Enter your date of birth</label>
         <input type="text" name="birthday" id="birthday">
-        <button id="btn">Calculate Age</button>
+        <button id="btn"><i class="fas fa-calendar-check"></i> Calculate Age</button>
         <p id="result"></p>
+        <p id="error" class="error"></p>
     </section>
 </main>
 <script src="libs/flatpickr.min.js"></script>

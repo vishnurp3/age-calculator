@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEl = document.getElementById("btn");
     const birthdayEl = document.getElementById("birthday");
     const resultEl = document.getElementById("result");
+    const errorEl = document.getElementById("error");
 
     // Initialize Flatpickr
     flatpickr(birthdayEl, {
         dateFormat: "Y-m-d",
         maxDate: "today",
+        allowInput: true
     });
 
     const getAge = (birthdayValue) => {
@@ -40,16 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const displayError = (message) => {
+        errorEl.innerText = message;
+        errorEl.style.display = 'block';
+    };
+
+    const clearError = () => {
+        errorEl.innerText = '';
+        errorEl.style.display = 'none';
+    };
+
     const calculateAge = () => {
+        clearError();
         const birthdayValue = birthdayEl.value;
         if (!birthdayValue) {
-            alert('Please enter your birthday');
+            displayError('Please enter your birthday');
             return;
         }
 
         const age = getAge(birthdayValue);
         if (age.years === -1) {
-            alert('The date cannot be in the future');
+            displayError('The date cannot be in the future');
             return;
         }
 
