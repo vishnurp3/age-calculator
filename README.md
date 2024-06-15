@@ -1,5 +1,7 @@
 # Age Calculator
 
+[View the Age Calculator on GitHub Pages](https://vishnurp3.github.io/age-calculator/)
+
 This is a simple Age Calculator web application. Users can enter their date of birth and calculate their age in years,
 months, and days.
 
